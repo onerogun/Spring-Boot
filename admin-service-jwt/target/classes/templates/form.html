@@ -1,0 +1,31 @@
+<html>
+<body>
+<form action="#" th:action="@{/}" th:object="${users}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{userName}" /></td>
+            <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Username Error</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="text" th:field="*{password}" /></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+        </tr>
+        <tr>
+            <td>Active:</td>
+            <td><input type="text" th:field="*{active}" /></td>
+            <td th:if="${#fields.hasErrors('active')}" th:errors="*{active}">Active Error</td>
+        </tr>
+        <tr>
+            <td>Roles:</td>
+            <td><input type="text" th:field="*{roles}" /></td>
+            <td th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}">Roles Error</td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
