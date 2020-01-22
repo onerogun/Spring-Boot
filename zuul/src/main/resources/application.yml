@@ -1,0 +1,28 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    security-service-jwt:
+      path: /**
+      serviceId: SECURITY-SERVICE-JWT
+    student-service:
+      path: /student/**
+      serviceId: STUDENT-SERVICE
+    admin-service:
+      path: /admin/**
+      serviceId: ADMIN-SERVICE
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+server:
+  port: 8085
+
+spring:
+  application:
+    name: zuul-service
